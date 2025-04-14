@@ -1,6 +1,5 @@
 local set = vim.keymap.set
 
-
 set("n", "<space><space>x", "<cmd>source %<CR>")
 set("n", "<space>x", ":.lua<CR>")
 set("v", "<space>x", ":lua<CR>")
@@ -13,12 +12,14 @@ set("v", "J", ":m '>+1<CR>gv=gv")
 
 set("x", "<leader>p", '"_dP')
 
-
 set("n", "<Esc>", "<cmd>noh<CR>", { noremap = false, desc = "[N][O][H]ighlight" })
 
-
-set("n", "]d", function() vim.diagnostic.jump({ count = 1, float = true}) end)
-set("n", "[d", function() vim.diagnostic.jump({ count = -1, float = true}) end)
+set("n", "]d", function()
+  vim.diagnostic.jump { count = 1, float = true }
+end)
+set("n", "[d", function()
+  vim.diagnostic.jump { count = -1, float = true }
+end)
 set("n", "U", function()
   vim.diagnostic.open_float {
     scope = "cursor",
@@ -37,13 +38,12 @@ set("n", "<M-m>", "<c-w>5-")
 set("n", "<leader>sl", vim.cmd["split"], { desc = "Horizontal split" })
 set("n", "<leader>vl", vim.cmd["vsplit"], { desc = "Vertical split" })
 
-
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ef9bfd" } )
+vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ef9bfd" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })

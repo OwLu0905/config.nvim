@@ -1,3 +1,3 @@
-require("config.lazy")
+require "config.lazy"
 
-require("plugins")
+require "plugins"

@@ -9,7 +9,18 @@ opt.mouse = "a"
 
 opt.cursorline = true
 
--- fwerjifowe
+opt.inccommand = "split"
+
+opt.splitbelow = true
+opt.splitright = true
+
+opt.smartcase = true
+opt.ignorecase = true
+
+opt.tabstop = 2
+opt.shiftwidth = 2
+opt.softtabstop = 2
+
 --
 -- NOTE: https://github.com/LazyVim/LazyVim/discussions/3018
 -- NOTE: formatoptions is buffer-local by default
@@ -17,9 +28,9 @@ opt.cursorline = true
 -- vim.api.nvim_create_autocmd
 
 vim.api.nvim_create_autocmd("Filetype", {
-	pattern = "*",
-	callback = function ()
-		-- vim.opt.formatoptions:remove({"c","r","o"})
-		vim.opt.formatoptions:remove({"r","o"})
-	end,
+  pattern = "*",
+  callback = function()
+    -- vim.opt.formatoptions:remove({"c","r","o"})
+    vim.opt.formatoptions:remove { "r", "o" }
+  end,
 })

@@ -1,1 +1,1 @@
-require("plugins.ui")
+require "plugins.ui"
