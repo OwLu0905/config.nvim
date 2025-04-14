@@ -15,6 +15,10 @@ return {
 
       lspconfig.lua_ls.setup {}
       lspconfig.ts_ls.setup {}
+
+      vim.diagnostic.config {
+        virtual_lines = true,
+      }
     end,
   },
 }

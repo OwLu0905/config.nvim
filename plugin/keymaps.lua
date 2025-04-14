@@ -1,8 +1,8 @@
 local set = vim.keymap.set
 
-set("n", "<space><space>x", "<cmd>source %<CR>")
-set("n", "<space>x", ":.lua<CR>")
-set("v", "<space>x", ":lua<CR>")
+set("n", "<leader><leader>x", "<cmd>source %<CR>")
+set("n", "<leader>x", ":.lua<CR>")
+set("v", "<leader>x", ":lua<CR>")
 
 set("i", "jk", "<ESC>")
 set("i", "kj", "<ESC>")
