@@ -15,6 +15,8 @@ return {
 
       lspconfig.lua_ls.setup {}
       lspconfig.ts_ls.setup {}
+      lspconfig.svelte.setup {}
+      lspconfig.tailwindcss.setup {}
 
       vim.diagnostic.config {
         virtual_lines = true,

@@ -12,6 +12,9 @@ set("v", "J", ":m '>+1<CR>gv=gv")
 
 set("x", "<leader>p", '"_dP')
 
+-- Easily hit escape in terminal mode.
+set("t", "<Esc>", "<c-\\><c-N>")
+
 set("n", "<Esc>", "<cmd>noh<CR>", { noremap = false, desc = "[N][O][H]ighlight" })
 
 set("n", "]d", function()
