@@ -17,9 +17,10 @@ return {
       lspconfig.ts_ls.setup {}
       lspconfig.svelte.setup {}
       lspconfig.tailwindcss.setup {}
+      lspconfig.ruff.setup {}
 
       vim.diagnostic.config {
-        virtual_lines = true,
+        virtual_lines = false,
       }
     end,
   },
