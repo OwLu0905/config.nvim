@@ -18,10 +18,13 @@ return {
       lspconfig.svelte.setup {}
       lspconfig.tailwindcss.setup {}
       lspconfig.ruff.setup {}
+      lspconfig.pyright.setup {}
 
       vim.diagnostic.config {
         virtual_lines = false,
       }
+
+      require "config.ruff"
     end,
   },
 }

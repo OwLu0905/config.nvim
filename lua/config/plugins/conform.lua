@@ -5,6 +5,7 @@ return {
     config = function()
       require("conform").setup {
         formatters_by_ft = {
+          svelte = { "prettier", "prettiered" },
           lua = { "stylua" },
           python = function(bufnr)
             if require("conform").get_formatter_info("ruff_format", bufnr).available then
