@@ -6,7 +6,10 @@ return {
       require("conform").setup {
         formatters_by_ft = {
           svelte = { "prettier", "prettiered" },
+          typescript = { "prettier", "prettiered" },
+          typescriptreact = { "prettier", "prettiered" },
           lua = { "stylua" },
+          toml = { "taplo" },
           python = function(bufnr)
             if require("conform").get_formatter_info("ruff_format", bufnr).available then
               return { "ruff_format" }
