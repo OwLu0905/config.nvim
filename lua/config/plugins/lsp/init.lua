@@ -19,6 +19,7 @@ return {
       lspconfig.tailwindcss.setup {}
       lspconfig.ruff.setup {}
       lspconfig.pyright.setup {}
+      lspconfig.rust_analyzer.setup {}
 
       vim.diagnostic.config {
         virtual_lines = false,
