@@ -12,7 +12,7 @@ return {
     "cdmill/neomodern.nvim",
     config = function()
       require("neomodern").setup {}
-      require("neomodern").load()
+      -- require("neomodern").load()
     end,
   },
 }

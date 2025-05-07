@@ -5,6 +5,7 @@ return {
     config = function()
       require("conform").setup {
         formatters_by_ft = {
+          rust = { "rustfmt", lsp_format = "fallback" },
           svelte = { "prettier", "prettiered" },
           typescript = { "prettier", "prettiered" },
           typescriptreact = { "prettier", "prettiered" },
