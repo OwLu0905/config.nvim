@@ -1,6 +1,7 @@
 return {
   {
     "neovim/nvim-lspconfig",
+    tag = "v2.4.0",
     dependencies = {
       "mason-org/mason.nvim",
       "mason-org/mason-lspconfig.nvim",
@@ -18,6 +19,14 @@ return {
       vim.lsp.enable "ruff"
       vim.lsp.enable "pyright"
       vim.lsp.enable "rust_analyzer"
+      vim.lsp.enable "sourcekit"
+
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = vim.api.nvim_create_augroup("lsp_attach_utils", { clear = true }),
+        callback = function()
+          vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { buffer = 0 })
+        end,
+      })
 
       -- local lspconfig = require "lspconfig"
       --

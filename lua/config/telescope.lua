@@ -5,5 +5,4 @@ local builtin = require "telescope.builtin"
 
 set("n", "<leader>fd", builtin.find_files)
 set("n", "<leader>fg", builtin.live_grep)
-set("n", "<leader>fg", builtin.live_grep)
 set("n", "<leader>gw", builtin.grep_string)
