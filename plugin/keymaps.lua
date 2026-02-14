@@ -42,6 +42,8 @@ set("n", "<M-m>", "<c-w>5-")
 set("n", "<leader>sl", vim.cmd["split"], { desc = "Horizontal split" })
 set("n", "<leader>vl", vim.cmd["vsplit"], { desc = "Vertical split" })
 
+set("n", "<leader>rn", vim.lsp.buf.rename)
+
 vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ef9bfd" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -51,3 +53,9 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+set("n", "<leader>cp", function()
+  local path = vim.fn.expand "%:p"
+  vim.fn.setreg("+", path)
+  print(path)
+end, { desc = "Copy file path" })

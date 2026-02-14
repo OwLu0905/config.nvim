@@ -5,12 +5,15 @@ return {
     config = function()
       require("conform").setup {
         formatters_by_ft = {
+          c = { "clang_format", lsp_format = "fallback" },
+          cpp = { "clang_format", lsp_format = "fallback" },
           rust = { "rustfmt", lsp_format = "fallback" },
           svelte = { "prettier", "prettiered" },
           typescript = { "prettier", "prettiered" },
           typescriptreact = { "prettier", "prettiered" },
           lua = { "stylua" },
           toml = { "taplo" },
+          go = { "gofumpt" },
           python = function(bufnr)
             if require("conform").get_formatter_info("ruff_format", bufnr).available then
               return { "ruff_format" }
