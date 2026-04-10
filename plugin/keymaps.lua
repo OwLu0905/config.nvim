@@ -5,8 +5,8 @@ set("n", "<leader>x", ":.lua<CR>")
 set("v", "<leader>x", ":lua<CR>")
 
 -- NOTE: challenge
--- set("i", "jk", "<ESC>")
--- set("i", "kj", "<ESC>")
+set("i", "jk", "<ESC>")
+set("i", "kj", "<ESC>")
 
 set("v", "K", ":m '<-2<CR>gv=gv")
 set("v", "J", ":m '>+1<CR>gv=gv")
