@@ -59,3 +59,7 @@ set("n", "<leader>cp", function()
   vim.fn.setreg("+", path)
   print(path)
 end, { desc = "Copy file path" })
+
+vim.api.nvim_create_autocmd("FocusGained", {
+  command = "checktime",
+})
