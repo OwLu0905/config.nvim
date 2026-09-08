@@ -9,6 +9,9 @@ local function get_venv()
 end
 
 require("lualine").setup {
+  options = {
+    globalstatus = true,
+  },
   sections = {
     lualine_a = {
       {
