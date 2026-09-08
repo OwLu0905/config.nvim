@@ -18,6 +18,9 @@ opt.softtabstop = 2
 
 opt.laststatus = 3
 
+-- session 內容（persistence.nvim）
+opt.sessionoptions = { "buffers", "curdir", "folds", "globals", "help", "tabpages", "winsize", "winpos", "terminal", "localoptions" }
+
 -- Python 用 4 格（PEP 8）
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "python",
