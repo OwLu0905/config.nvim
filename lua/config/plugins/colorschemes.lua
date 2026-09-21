@@ -38,4 +38,5 @@ return {
     },
   },
   { "serhez/teide.nvim", opts = {} },
+  { "oskarnurm/koda.nvim" },
 }
