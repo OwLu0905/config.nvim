@@ -44,7 +44,15 @@ set("n", "<leader>vl", vim.cmd["vsplit"], { desc = "Vertical split" })
 
 set("n", "<leader>rn", vim.lsp.buf.rename)
 
-vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ef9bfd" })
+-- 切換 colorscheme 會清掉自訂 highlight，所以在 ColorScheme 事件重新套用
+local function set_custom_highlights()
+  vim.api.nvim_set_hl(0, "CursorLineNr", { fg = "#ef9bfd" })
+end
+set_custom_highlights()
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = vim.api.nvim_create_augroup("custom-highlights", { clear = true }),
+  callback = set_custom_highlights,
+})
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
