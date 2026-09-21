@@ -7,18 +7,16 @@ return {
       "mason-org/mason-lspconfig.nvim",
     },
     config = function()
+      -- 由 mason 安裝並啟用的 server
+      local servers = { "lua_ls", "ts_ls", "svelte", "tailwindcss", "ruff", "pyright", "rust_analyzer" }
+
       require("mason").setup()
       require("mason-lspconfig").setup {
-        ensure_installed = { "lua_ls", "rust_analyzer" },
+        ensure_installed = servers,
       }
 
-      vim.lsp.enable "lua_ls"
-      vim.lsp.enable "ts_ls"
-      vim.lsp.enable "svelte"
-      vim.lsp.enable "tailwindcss"
-      vim.lsp.enable "ruff"
-      vim.lsp.enable "pyright"
-      vim.lsp.enable "rust_analyzer"
+      vim.lsp.enable(servers)
+      -- sourcekit 隨 Xcode 安裝，不經 mason
       vim.lsp.enable "sourcekit"
 
       vim.api.nvim_create_autocmd("LspAttach", {
