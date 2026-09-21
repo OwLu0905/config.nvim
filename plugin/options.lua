@@ -31,10 +31,10 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
--- 你原本的 formatoptions 設定
-vim.api.nvim_create_autocmd("Filetype", {
+-- 換行時不自動延續註解（ftplugin 會覆寫 formatoptions，所以要在 FileType 之後移除）
+vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
   callback = function()
-    vim.opt.formatoptions:remove { "r", "o" }
+    vim.opt_local.formatoptions:remove { "r", "o" }
   end,
 })
