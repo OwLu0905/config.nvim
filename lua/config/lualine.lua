@@ -1,13 +1,3 @@
-local function get_venv()
-  local venv = vim.env.VIRTUAL_ENV
-  if venv then
-    local name = string.match(venv, "[^/]+$")
-    return string.format("(%s)", name)
-  else
-    return ""
-  end
-end
-
 require("lualine").setup {
   options = {
     globalstatus = true,
@@ -21,6 +11,6 @@ require("lualine").setup {
         end,
       },
     },
-    lualine_x = { { get_venv }, "filetype" },
+    lualine_x = { "filetype" },
   },
 }
