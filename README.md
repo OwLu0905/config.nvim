@@ -20,6 +20,19 @@ brew install neovim git ripgrep fd tree-sitter-cli node
 | `node` | mason 安裝 vtsls / vue_ls / eslint / tailwind / prettier 等 |
 | Nerd Font | 圖示（lualine、oil），終端機字型要設成 Nerd Font |
 
+> **用 fnm 管 Node 的話**：上面的 `brew install` 拿掉 `node`，改成
+>
+> ```sh
+> brew install fnm
+> echo 'fnm env --use-on-cd | source' >> ~/.config/fish/config.fish   # zsh: eval "$(fnm env --use-on-cd)" 寫進 ~/.zshrc
+> # 重開 terminal
+> fnm install --lts
+> fnm default lts-latest   # 一定要設預設版本，否則在專案外開 nvim 會找不到 node，mason 裝不了 LSP
+> ```
+>
+> 注意：mason 裝的 LSP（vtsls、vue_ls、eslint…）會用「開 nvim 那個目錄生效的 node」執行。
+> 專案 `.nvmrc` / `.node-version` 指定太舊的版本（< 18）時，LSP 可能起不來，用 `:checkhealth vim.lsp` 看錯誤。
+
 ### 2. Ruby（給 ruby_lsp）
 
 macOS 內建的 Ruby 2.6 太舊，mason 會裝不起 `ruby-lsp`。先用公司專案指定的版本管理工具（rbenv / asdf / mise）裝好 Ruby 3.x，**再開 nvim**。
